@@ -30,24 +30,24 @@ namespace NinjaTrader.NinjaScript.Indicators
 		{
 			if (State == State.SetDefaults)
 			{
-				Description	= @"Adds Support & Resistance Lines Based on Key Value Pairs";
+				Description = @"Adds Support & Resistance Lines Based on Key Value Pairs";
 				Name = "SupportResisanceLines";
-				Calculate	= Calculate.OnBarClose;
-				IsOverlay	= true;
+				Calculate = Calculate.OnBarClose;
+				IsOverlay = true;
 				DisplayInDataBox = true;
 				DrawOnPricePanel = true;
 				DrawHorizontalGridLines	= true;
 				DrawVerticalGridLines = true;
-				PaintPriceMarkers	= true;
+				PaintPriceMarkers = true;
 				ScaleJustification= NinjaTrader.Gui.Chart.ScaleJustification.Right;
 				IsSuspendedWhileInactive = true;
 				DisplayLabels = true;
 				LabelOffset = -10;
-      }
-    }
+      			}
+    		}
 
-    protected override void OnBarUpdate()
-    {
+    		protected override void OnBarUpdate()
+    		{
 			var levelStrings = InputLevels.Split(',');
 
 			foreach (var levelString in levelStrings)
@@ -73,28 +73,28 @@ namespace NinjaTrader.NinjaScript.Indicators
 			}
 		}
 
-    [NinjaScriptProperty]
-    [Display(Name = "Input Levels", Description = "", Order = 1, GroupName = "Parameters")]
-    public string InputLevels
-    {
-      get;
-      set;
-    }
-		
 		[NinjaScriptProperty]
-    [Display(Name = "Display Labels?", Description = "", Order = 2, GroupName = "Parameters")]
-    public bool DisplayLabels
-    {
-      get;
-      set;
-    }
-		
+		[Display(Name = "Input Levels", Description = "", Order = 1, GroupName = "Parameters")]
+		public string InputLevels
+		{
+			get;
+			set;
+		}
+
 		[NinjaScriptProperty]
-    [Display(Name = "Label Offset", Description = "", Order = 3, GroupName = "Parameters")]
-    public int LabelOffset
-    {
-      get;
-      set;
-    }
-  }
+		[Display(Name = "Display Labels?", Description = "", Order = 2, GroupName = "Parameters")]
+		public bool DisplayLabels
+		{
+			get;
+			set;
+		}
+
+		[NinjaScriptProperty]
+		[Display(Name = "Label Offset", Description = "", Order = 3, GroupName = "Parameters")]
+		public int LabelOffset
+		{
+			get;
+			set;
+		}
+  	}
 }
