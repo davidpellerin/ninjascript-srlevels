@@ -52,7 +52,6 @@ namespace NinjaTrader.NinjaScript.Indicators
 
 			foreach (var levelString in levelStrings)
 			{
-				Print(levelString);
 				var parts = levelString.Split('=');
 				if (parts.Length == 2)
 				{
